@@ -89,9 +89,9 @@ private:
 
 	const float speed = 100.0f;
 	
-	bool up;
-	bool down;
-	bool left;
-	bool right;
+	bool up = false;
+	bool down = false;
+	bool left = false;
+	bool right = false;
 };
 
