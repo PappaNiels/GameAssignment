@@ -10,7 +10,7 @@ namespace Tmpl8
     //Surface tiles("assets/nc2tiles.png");
     //Sprite tank(new Surface("assets/ctankbase.tga"), 16);
 
-    targets test;
+    //targets test;
 
     void Game::Init() {
         //test.GoToCoord();
@@ -25,7 +25,7 @@ namespace Tmpl8
         mousey = y; 
 
 
-        test.MouseMove(x, y);
+        //test.MouseMove(x, y);
     }
 
     //Game::Game() {
@@ -33,11 +33,11 @@ namespace Tmpl8
     //}
 
     void Game::MouseDown(int key) {
-        test.MouseDown(key);
+        //test.MouseDown(key);
     }
     
     void Game::MouseUp(int key) {
-        test.MouseUp(key);
+        //test.MouseUp(key);
     }
 
     void Game::KeyDown(int key) {
@@ -60,21 +60,22 @@ namespace Tmpl8
 
         deltaTime /= 1000.0f;
 
-        if (GetAsyncKeyState(VK_UP)) {
-            //test.MoveUp();
-        }
-        if (GetAsyncKeyState(VK_DOWN)) {
-            test.MoveDown();
-        }
-        if (GetAsyncKeyState(VK_LEFT)) {
-            test.MoveLeft();
-        }
-        if (GetAsyncKeyState(VK_RIGHT)) {
-            test.MoveRight();
-        }
+        //if (GetAsyncKeyState(VK_UP)) {
+        //    //test.MoveUp();
+        //}
+        //if (GetAsyncKeyState(VK_DOWN)) {
+        //    test.MoveDown();
+        //}
+        //if (GetAsyncKeyState(VK_LEFT)) {
+        //    test.MoveLeft();
+        //}
+        //if (GetAsyncKeyState(VK_RIGHT)) {
+        //    test.MoveRight();
+        //}
         //if (GetAsyncKeyState(VK_DELETE)) {}
 
-        test.Update(screen);
+        test.Update(deltaTime);
+        test.Render(*screen);
     }
 };
 
