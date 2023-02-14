@@ -70,10 +70,10 @@ StyleCopReport.xml
 *_h.h
 *.ilk
 *.meta
-#*.obj
+*.obj
 *.iobj
 *.pch
-#*.pdb
+*.pdb
 *.ipdb
 *.pgc
 *.pgd
@@ -85,7 +85,7 @@ StyleCopReport.xml
 *.tmp
 *.tmp_proj
 *_wpftmp.csproj
-#*.log
+*.log
 *.vspscc
 *.vssscc
 .builds
