@@ -59,7 +59,7 @@ public:
 	/// </summary>
 	/// <param name="screen">Screen surface where the sprite needs to be drawn on</param>
 	void Render(Tmpl8::Surface& screen) {
-		sprite.Draw(&screen, pos.x, pos.y);
+		sprite.Draw(&screen, (int)pos.x, (int)pos.y);
 	}
 
 	/// <summary>
