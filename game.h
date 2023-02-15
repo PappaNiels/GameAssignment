@@ -27,8 +27,8 @@ public:
 	
 private:
 	Surface* screen;
-	int mousex;
-	int mousey;
+	int mousex = 0;
+	int mousey = 0;
 	Player test;
 	//std::vector<targets> target;
 };
