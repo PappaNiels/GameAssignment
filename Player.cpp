@@ -2,20 +2,22 @@
 
 #include <SDL_scancode.h>
 
+
+
 void Player::KeyUp(int key)
 {
 	switch (key) {
 	case SDL_SCANCODE_W:
-		up = false;
+		upKey = false;
 		break;
 	case SDL_SCANCODE_S:
-		down = false;
+		downKey = false;
 		break;
 	case SDL_SCANCODE_A:
-		left = false;
+		leftKey = false;
 		break;
 	case SDL_SCANCODE_D:
-		right = false;
+		rightKey = false;
 		break;
 	}
 }
@@ -24,38 +26,91 @@ void Player::KeyDown(int key)
 {
 	switch (key) {
 	case SDL_SCANCODE_W:
-		up = true;
+		upKey = true;
 		break;
 	case SDL_SCANCODE_S:
-		down = true;
+		downKey = true;
 		break;
 	case SDL_SCANCODE_A:
-		left = true;
+		leftKey = true;
 		break;
 	case SDL_SCANCODE_D:
-		right = true;
+		rightKey = true;
+		break;
+	}
+}
+
+void Player::Move(int spriteFrame, float dT, int plusX, int plusY) {
+	sprite.SetFrame(spriteFrame);
+
+	switch (plusX) {
+	case 0:
+		// Dont move
+		break;
+	case 1:
+		// Move left
+		if (pos.x > 100)
+			pos.x -= speed * dT;
+		break;
+	case 2:
+		// Move right
+		if (pos.x + sprite.GetWidth() < ScreenWidth - 100)
+			pos.x += speed * dT;
+		break;
+	}
+
+	switch (plusY) {
+	case 0:
+		// Dont move
+		break;
+	case 1:
+		// Move left
+		if (pos.y > 100)
+			pos.y -= speed * dT;
+		break;
+	case 2:
+		// Move right
+		if (pos.y + sprite.GetHeight() <= ScreenHeight - 100)
+			pos.y += speed * dT;
 		break;
 	}
 }
 
 void Player::Update(float dT)
 {
-	if (up) {
-		sprite.SetFrame(0);
-		pos.y -= speed * dT;
+	if (upKey && leftKey) {
+		Move(topleft, dT, 1, 1);
+		return;
 	}
 
-	if (down) {
-		sprite.SetFrame(8);
-		pos.y += speed * dT;
-	}
-	if (left) {
-		sprite.SetFrame(12);
-		pos.x -= speed * dT;
+	if (upKey && rightKey) {
+		Move(topright, dT, 2, 1);
+		return;
 	}
 
-	if (right) {
-		sprite.SetFrame(4);
-		pos.x += speed * dT;
+	if (downKey && leftKey) {
+		Move(bottomleft, dT, 1, 2);
+		return;
+	}
+
+	if (downKey && rightKey) {
+		Move(bottomright, dT, 2, 2);
+		return;
+	}
+	 
+	if (upKey) {
+		Move(top, dT, 0, 1);
+	}
+
+	if (downKey) {
+		Move(bottom, dT, 0, 2);
+	}
+	
+	if (leftKey) {
+		Move(left, dT, 1, 0);
+	}
+
+	if (rightKey) {
+		Move(right, dT, 2, 0);
 	}
 }
