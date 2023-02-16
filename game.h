@@ -3,6 +3,7 @@
 #include "template.h"
 #include "targets.h"
 #include "Player.h"
+#include "StartMenu.h"
 
 #include <vector>
 
@@ -32,10 +33,11 @@ private:
 	int mousey = 0;
 	int gameState = 0;
 	
+	StartMenu menu;
 	Player test;
 
 	enum gameStates {
-		menu = 0, 
+		mainmenu = 0, 
 		game = 1,
 		pause = 2
 	};
