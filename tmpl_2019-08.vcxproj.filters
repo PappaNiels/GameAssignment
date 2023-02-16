@@ -11,6 +11,7 @@
     <ClCompile Include="targets.cpp" />
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="StartMenu.cpp" />
+    <ClCompile Include="MapManager.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="game.h" />
@@ -23,6 +24,7 @@
     <ClInclude Include="targets.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="StartMenu.h" />
+    <ClInclude Include="MapManager.h" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="template code">

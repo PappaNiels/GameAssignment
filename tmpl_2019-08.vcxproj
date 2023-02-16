@@ -223,6 +223,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="game.cpp" />
+    <ClCompile Include="MapManager.cpp" />
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="StartMenu.cpp" />
     <ClCompile Include="surface.cpp" />
@@ -231,6 +232,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="game.h" />
+    <ClInclude Include="MapManager.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="StartMenu.h" />
     <ClInclude Include="surface.h" />
