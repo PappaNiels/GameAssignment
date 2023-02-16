@@ -66,6 +66,8 @@ public:
 		case 3:
 
 			break;
+		default:
+			break;
 		}
 	}
 
@@ -86,6 +88,8 @@ public:
 			break;
 		case 3:
 
+			break;
+		default:
 			break;
 		}
 	}

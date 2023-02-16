@@ -1,3 +1,5 @@
-﻿  Player.cpp
+﻿  StartMenu.cpp
+C:\Users\Niels\Documents\game\assignment\GameAssignment\StartMenu.cpp(42,45): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\Niels\Documents\game\assignment\GameAssignment\StartMenu.cpp(42,32): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
      Creating library C:\Users\Niels\Documents\game\assignment\GameAssignment\tmpl_2019-08_x64_debug.lib and object C:\Users\Niels\Documents\game\assignment\GameAssignment\tmpl_2019-08_x64_debug.exp
   tmpl_2019-08.vcxproj -> C:\Users\Niels\Documents\game\assignment\GameAssignment\tmpl_2019-08_x64_debug.exe
