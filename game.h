@@ -27,10 +27,18 @@ public:
 	
 private:
 	Surface* screen;
+	
 	int mousex = 0;
 	int mousey = 0;
+	int gameState = 0;
+	
 	Player test;
-	//std::vector<targets> target;
+
+	enum gameStates {
+		menu = 0, 
+		game = 1,
+		pause = 2
+	};
 };
 
 }; // namespace Tmpl8
