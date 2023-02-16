@@ -17,7 +17,7 @@ public:
 	void KeyUp(int key);
 	void KeyDown(int key);
 
-	void MouseMove(int x, int y);
+	void MouseMove(int x, int y) { cursorLoc.x = static_cast<float>(x); cursorLoc.y = static_cast<float>(y); mouseMode = true; };
 	void MouseUp(int key);
 	void MouseDown(int key);
 
@@ -27,7 +27,14 @@ private:
 	Tmpl8::Sprite cursor;
 	Tmpl8::vec2 cursorLoc;
 
-	int menuType;
+	bool mouseMode = true;
+
+	int selectedTile = 0;
+	int menuType = 0;
+
+	void Start(Tmpl8::Surface& screen);
+	void LevelSelector(Tmpl8::Surface& screen);
+	void Settings(Tmpl8::Surface& screen);
 
 	enum menu {
 		start = 0,
