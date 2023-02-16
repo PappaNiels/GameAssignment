@@ -19,6 +19,8 @@ void Player::KeyUp(int key)
 	case SDL_SCANCODE_D:
 		rightKey = false;
 		break;
+	case SDL_SCANCODE_LSHIFT:
+		speed = 100.0f;
 	default:
 		break;
 	}
@@ -39,6 +41,11 @@ void Player::KeyDown(int key)
 	case SDL_SCANCODE_D:
 		rightKey = true;
 		break;
+	case SDL_SCANCODE_LSHIFT:
+		if (speed < 200.0f) {
+			speed = 200.0f;
+		}
+		break;
 	default:
 		break;
 	}
@@ -53,13 +60,15 @@ void Player::Move(int spriteFrame, float dT, int plusX, int plusY) {
 		break;
 	case 1:
 		// Move left
-		if (pos.x > 100)
+		if (pos.x > 100) {
 			pos.x -= speed * dT;
+		}
 		break;
 	case 2:
 		// Move right
-		if (pos.x + sprite.GetWidth() < ScreenWidth - 100)
+		if (pos.x + sprite.GetWidth() < ScreenWidth - 100) {
 			pos.x += speed * dT;
+		}
 		break;
 	default:
 		break;
@@ -71,13 +80,15 @@ void Player::Move(int spriteFrame, float dT, int plusX, int plusY) {
 		break;
 	case 1:
 		// Move left
-		if (pos.y > 100)
+		if (pos.y > 100) {
 			pos.y -= speed * dT;
+		}
 		break;
 	case 2:
 		// Move right
-		if (pos.y + sprite.GetHeight() <= ScreenHeight - 100)
+		if (pos.y + sprite.GetHeight() <= ScreenHeight - 100) {
 			pos.y += speed * dT;
+		}
 		break;
 	default:
 		break;
@@ -121,4 +132,8 @@ void Player::Update(float dT)
 	if (rightKey) {
 		Move(right, dT, 2, 0);
 	}
+}
+
+void Player::Shoot() {
+
 }

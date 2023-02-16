@@ -82,7 +82,7 @@ public:
 	void MouseDown(int key) {
 		switch (key) {
 		case 1:
-
+			Shoot();
 			break;
 		case 2:
 			break;
@@ -115,6 +115,11 @@ public:
 	/// </summary>
 	/// <returns>Player Health 0 to 100</returns>
 	int GetPlayerHealth() { return health; };
+protected: 
+	/// <summary>
+	/// Shoot a buttet where you are looking at
+	/// </summary>
+	void Shoot();
 
 private:
 	/// <summary>
@@ -152,7 +157,7 @@ private:
 	int ammo;
 	int heading;
 
-	const float speed = 100.0f;
+	float speed = 100.0f;
 	
 	bool upKey = false;
 	bool downKey = false;
