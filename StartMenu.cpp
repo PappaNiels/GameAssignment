@@ -57,7 +57,7 @@ void StartMenu::Settings(Tmpl8::Surface& screen) {
 
 }
 
-void StartMenu::Draw(Tmpl8::Surface& screen) {
+void StartMenu::Render(Tmpl8::Surface& screen) {
 	if (mouseMode) {
 		cursor.Draw(&screen, static_cast<int>(cursorLoc.x), static_cast<int>(cursorLoc.y));
 	}

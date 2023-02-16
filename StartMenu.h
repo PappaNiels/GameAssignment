@@ -12,7 +12,7 @@ public:
 		cursorLoc = { ScreenWidth / 2, ScreenHeight / 2 };
 	};
 
-	~StartMenu();
+	//~StartMenu();
 
 	void KeyUp(int key);
 	void KeyDown(int key);
@@ -21,7 +21,7 @@ public:
 	void MouseUp(int key);
 	void MouseDown(int key);
 
-	void Draw(Tmpl8::Surface& screen);
+	void Render(Tmpl8::Surface& screen);
 
 private:
 	Tmpl8::Sprite cursor;

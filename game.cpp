@@ -22,10 +22,11 @@ namespace Tmpl8
 
     void Game::MouseMove(int x, int y) {
         mousex = x;
-        mousey = y; 
+        mousey = y;
 
 
         //test.MouseMove(x, y);
+        menu.MouseMove(x, y);
     }
 
     //Game::Game() {
@@ -74,7 +75,24 @@ namespace Tmpl8
         //}
         //if (GetAsyncKeyState(VK_DELETE)) {}
 
+        switch (gameState)
+        { 
+        case mainmenu:
+
+            break;
+        case game:
+
+            break;
+        case pause:
+
+            break;
+        default:
+            break;
+        }
+
         test.Update(deltaTime);
+        
+        menu.Render(*screen);
         test.Render(*screen);
     }
 };
