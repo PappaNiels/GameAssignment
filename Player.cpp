@@ -98,39 +98,39 @@ void Player::Move(int spriteFrame, float dT, int plusX, int plusY) {
 void Player::Update(float dT)
 {
 	if (upKey && leftKey) {
-		Move(topleft, dT, 1, 1);
+		this->Move(topleft, dT, 1, 1);
 		return;
 	}
 
 	if (upKey && rightKey) {
-		Move(topright, dT, 2, 1);
+		this->Move(topright, dT, 2, 1);
 		return;
 	}
 
 	if (downKey && leftKey) {
-		Move(bottomleft, dT, 1, 2);
+		this->Move(bottomleft, dT, 1, 2);
 		return;
 	}
 
 	if (downKey && rightKey) {
-		Move(bottomright, dT, 2, 2);
+		this->Move(bottomright, dT, 2, 2);
 		return;
 	}
 	 
 	if (upKey) {
-		Move(top, dT, 0, 1);
+		this->Move(top, dT, 0, 1);
 	}
 
 	if (downKey) {
-		Move(bottom, dT, 0, 2);
+		this->Move(bottom, dT, 0, 2);
 	}
 	
 	if (leftKey) {
-		Move(left, dT, 1, 0);
+		this->Move(left, dT, 1, 0);
 	}
 
 	if (rightKey) {
-		Move(right, dT, 2, 0);
+		this->Move(right, dT, 2, 0);
 	}
 }
 

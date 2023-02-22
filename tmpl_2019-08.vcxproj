@@ -227,7 +227,6 @@
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="StartMenu.cpp" />
     <ClCompile Include="surface.cpp" />
-    <ClCompile Include="targets.cpp" />
     <ClCompile Include="template.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -236,7 +235,6 @@
     <ClInclude Include="Player.h" />
     <ClInclude Include="StartMenu.h" />
     <ClInclude Include="surface.h" />
-    <ClInclude Include="targets.h" />
     <ClInclude Include="template.h" />
   </ItemGroup>
   <ItemGroup>

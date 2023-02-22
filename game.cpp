@@ -2,98 +2,96 @@
 #include "surface.h"
 #include "template.h"
 
-#define WIN32_LEAN_AND_MEAN
-#include <windows.h>
+#include <iostream>
+
+
+
+//#define WIN32_LEAN_AND_MEAN
+//#include <windows.h>
 
 namespace Tmpl8
 {
-    //Surface tiles("assets/nc2tiles.png");
-    //Sprite tank(new Surface("assets/ctankbase.tga"), 16);
 
-    //targets test;
+	static Game* gameObj = nullptr;
 
-    void Game::Init() {
-        //test.GoToCoord();
-        
+	Game::Game() : screen(nullptr) {
+		gameObj = this;
+	}
 
-       
-    }
-    void Game::Shutdown() {}
+	//Game::~Game() {
+	//    gameObj = nullptr;
+	//}
 
-    void Game::MouseMove(int x, int y) {
-        mousex = x;
-        mousey = y;
+	Game& Game::GetGame() {
+		return *gameObj;
+	}
+
+	void Game::Init() {
+		//GetScreenRes();
+	}
+	void Game::Shutdown() {}
+
+	void Game::MouseMove(int x, int y) {
+		//test.MouseMove(x, y);
+		menu.MouseMove(x, y);
+	}
+
+	void Game::MouseDown(int key) {
+		//test.MouseDown(key);
+		menu.MouseDown(key);
+	}
+
+	void Game::MouseUp(int key) {
+		//test.MouseUp(key);
+	}
+
+	void Game::KeyDown(int key) {
+		switch (gameState)
+		{
+		case mainmenu:
+			menu.KeyDown(key);
+
+			break;
+		case game:
+			test.KeyDown(key);
+
+			break;
+		case pause:
+
+			break;
+		default:
+			break;
+		}
+	}
+	void Game::KeyUp(int key) {
+		test.KeyUp(key);
+	}
+
+	void Game::Tick(float deltaTime)
+	{
+		screen->Clear(0);
+
+		deltaTime /= 1000.0f;
+
+		switch (gameState)
+		{
+		case mainmenu:
+
+			menu.Render(*screen);
+			break;
+		case game:
+
+			break;
+		case pause:
+
+			break;
+		default:
+			break;
+		}
 
 
-        //test.MouseMove(x, y);
-        menu.MouseMove(x, y);
-    }
-
-    //Game::Game() {
-        //targets test;
-    //}
-
-    void Game::MouseDown(int key) {
-        //test.MouseDown(key);
-    }
-    
-    void Game::MouseUp(int key) {
-        //test.MouseUp(key);
-    }
-
-    void Game::KeyDown(int key) {
-        test.KeyDown(key);
-    }
-    void Game::KeyUp(int key) {
-        test.KeyUp(key);
-    }
-
-    //Game::Game() {
-    //    //for (int i = 0; i < 3; i++) {
-    //    targets test;
-    //    target.push_back(std::move(test));
-    //    //}
-    //};
-
-    void Game::Tick(float deltaTime)
-    {
-        screen->Clear(0);
-
-        deltaTime /= 1000.0f;
-
-        //if (GetAsyncKeyState(VK_UP)) {
-        //    //test.MoveUp();
-        //}
-        //if (GetAsyncKeyState(VK_DOWN)) {
-        //    test.MoveDown();
-        //}
-        //if (GetAsyncKeyState(VK_LEFT)) {
-        //    test.MoveLeft();
-        //}
-        //if (GetAsyncKeyState(VK_RIGHT)) {
-        //    test.MoveRight();
-        //}
-        //if (GetAsyncKeyState(VK_DELETE)) {}
-
-        switch (gameState)
-        { 
-        case mainmenu:
-
-            break;
-        case game:
-
-            break;
-        case pause:
-
-            break;
-        default:
-            break;
-        }
-
-        test.Update(deltaTime);
-        
-        menu.Render(*screen);
-        test.Render(*screen);
-    }
+		test.Update(deltaTime);
+		test.Render(*screen);
+	}
 };
 

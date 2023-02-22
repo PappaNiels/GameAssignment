@@ -51,7 +51,7 @@ public:
 	/// <summary>
 	/// Detects if a mouse button has been released
 	/// </summary>
-	/// <param name="key">Mouse button id:
+	/// <param name="key">: Mouse button id:
 	/// 1 = Left mouse button
 	/// 2 = Middle mouse button
 	/// 3 = Right mouse button
@@ -74,7 +74,7 @@ public:
 	/// <summary>
 	/// Detects if a mouse button has been pressed
 	/// </summary>
-	/// <param name="key">Mouse button id:
+	/// <param name="key">: Mouse button id:
 	/// 1 = Left mouse button
 	/// 2 = Middle mouse button
 	/// 3 = Right mouse button
@@ -97,7 +97,7 @@ public:
 	/// <summary>
 	/// Tick for the Player Class
 	/// </summary>
-	/// <param name="dT">Delta time. Time difference between screen</param>
+	/// <param name="dT">: Delta time. Time difference between screen</param>
 	void Update(float dT);
 
 	/// <summary>
@@ -125,26 +125,26 @@ private:
 	/// <summary>
 	/// Removes health of the player
 	/// </summary>
-	/// <param name="amount">The amount that gets removed</param>
+	/// <param name="amount">: The amount that gets removed</param>
 	void DeductHealth(int amount) { health -= amount; }
 
 	/// <summary>
 	/// Sets the player's health
 	/// </summary>
-	/// <param name="amount">The amount that the player's health will be set to</param>
+	/// <param name="amount">: The amount that the player's health will be set to</param>
 	void SetPlayerHealth(int amount) { health = amount; }
 
 	/// <summary>
 	/// Moves the sprite and sets the desired frame of the sprite
 	/// </summary>
-	/// <param name="spriteFrame">The frame of the sprite that will be set</param>
-	/// <param name="dT">Delta time</param>
-	/// <param name="plusX">Move type X coord
+	/// <param name="spriteFrame">: The frame of the sprite that will be set</param>
+	/// <param name="dT">: Delta time</param>
+	/// <param name="plusX">: Move type X coord
 	///		0 = Don't move
 	///		1 = Move left (-)
 	///		2 = Move right (+)
 	/// </param>
-	/// <param name="plusY">Move type Y coord
+	/// <param name="plusY">: Move type Y coord
 	///		0 = Don't move
 	///		1 = Move left (-)
 	///		2 = Move right (+)
